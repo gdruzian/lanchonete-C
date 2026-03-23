@@ -98,7 +98,7 @@ void carregardados() {
 void cadastrocliente() {
 	 
 	 if(totclientes >= 100) {
-	 	printf("\nErro: Máximo de cliente atingido!");
+	 	printf("\nErro: MÃ¡ximo de cliente atingido!");
 	 	return;
 	 }
 	 
@@ -107,7 +107,7 @@ void cadastrocliente() {
 	printf("\nDigite o nome do cliente: ");
 	scanf(" %[^\n]", listadeclientes[totclientes].nome);
 	
-	printf("\nDigite o código do cliente: ");
+	printf("\nDigite o cÃ³digo do cliente: ");
 	scanf("%d", &listadeclientes[totclientes].codigo);
 	
 	printf("\nCliente '%s' cadastrado com sucesso!", listadeclientes[totclientes].nome);
@@ -126,7 +126,7 @@ void listarcliente() {
 	printf("\n===== Clientes =====");
 	
 	for(int i = 0; i < totclientes; i++) {
-		printf("\nNome: %s | Código: %d", 
+		printf("\nNome: %s | CÃ³digo: %d", 
 		listadeclientes[i].nome, 
 		listadeclientes[i].codigo);
 	}
@@ -136,12 +136,12 @@ void listarcliente() {
 void cadastroproduto() {
 	
 	if (totprodutos >= 100) {
-		printf("Erro: Máximo de produtos cadastrados!");
+		printf("Erro: MÃ¡ximo de produtos cadastrados!");
 		return;
 	}
 	
 	printf("\n=== Cadastro de novo produto ===\n");
-	printf("\nDigite o código do produto: ");
+	printf("\nDigite o cÃ³digo do produto: ");
 	scanf("%d", &cardapio[totprodutos].codigo);
 	
 	getchar();
@@ -149,7 +149,7 @@ void cadastroproduto() {
 	printf("\nDigite o nome do produto: ");
 	scanf(" %[^\n]", cardapio[totprodutos].nome);
 	
-	printf("\nDigite o preço do produto: ");
+	printf("\nDigite o preÃ§o do produto: ");
 	scanf("%f", &cardapio[totprodutos].preco);
 
 	printf("\nProduto '%s' cadastrado com sucesso!\n", cardapio[totprodutos].nome);
@@ -167,7 +167,7 @@ void listarproduto(){
 	printf("\n==== Produtos (%d cadastrados) ====", totprodutos);
 	
 	for(int i = 0; i < totprodutos; i++){
-		printf("\n Nome: %s | Código: %d | Preço: R$%.2f",
+		printf("\n Nome: %s | CÃ³digo: %d | PreÃ§o: R$%.2f",
 		 cardapio[i].nome, 
 		 cardapio[i].codigo,
 		 cardapio[i].preco);
@@ -178,15 +178,15 @@ void listarproduto(){
 void listarpedido() {
 	
 	if(totpedidos == 0){
-		printf("\nErro: Nenhum pedido feito até o momento!");
+		printf("\nErro: Nenhum pedido feito atÃ© o momento!");
 		return;
 	}
 	
 	printf("\n==== Pedidos Realizados ====\n");
 	
 	for(int i = 0; i < totpedidos; i++){
-		printf("\nCódigo do cliente: %d", comandadepedidos[i].codCliente);
-		printf("\nCódigo do produto: %d", comandadepedidos[i].codProduto);
+		printf("\nCÃ³digo do cliente: %d", comandadepedidos[i].codCliente);
+		printf("\nCÃ³digo do produto: %d", comandadepedidos[i].codProduto);
 		printf("\nQuantidade do produto: %d", comandadepedidos[i].quantidade);
 	}
 	printf("\n================================");
@@ -197,10 +197,10 @@ void realizarpedido(){
 	
 	printf("\n=== Realizar Novo Pedido! ===\n");
 	
-	printf("\nDigite o código do cliente: ");
+	printf("\nDigite o cÃ³digo do cliente: ");
 	scanf("%d", &codCliente);
 	
-	printf("\nDigite o código do produto: ");
+	printf("\nDigite o cÃ³digo do produto: ");
 	scanf("%d", &codProduto);
 	
 	printf("\nDigite a quantidade do pedido: ");
@@ -221,7 +221,7 @@ void realizarpedido(){
 	}
 	
 	if (cliente == 0) {
-		printf("Erro: Cliente com código '%d' não existe!", codCliente);
+		printf("Erro: Cliente com cÃ³digo '%d' nÃ£o existe!", codCliente);
 		return;
 	}
 	
@@ -235,7 +235,7 @@ void realizarpedido(){
 	}
 	
 	if (produto == 0) {
-		printf("\nErro: Produto código '%d' não existe!", codProduto);
+		printf("\nErro: Produto cÃ³digo '%d' nÃ£o existe!", codProduto);
 		return;
 	}
 
@@ -246,7 +246,7 @@ void realizarpedido(){
 		totpedidos++;
 		printf("\nPedido registrado!\n");
 	}else{
-		printf("\nErro: Quantidade de pedidos máximos atingidos!\n");
+		printf("\nErro: Quantidade de pedidos mÃ¡ximos atingidos!\n");
 	}	
 }
 
@@ -267,7 +267,7 @@ int main() {
 		printf("6. Listar Pedidos\n");
 		printf("0. Sair do programa\n");
 		printf("=====================");
-		printf("\nEscolha uma opção: ");
+		printf("\nEscolha uma opÃ§Ã£o: ");
 		scanf("%d", &opcao);
 		
 		switch(opcao){
@@ -296,7 +296,7 @@ int main() {
 				printf("Encerrando programa!");
 				break;
 			default: 
-				printf("Erro: Opção inválida!");
+				printf("Erro: OpÃ§Ã£o invÃ¡lida!");
 				break;
 		}
 	} while (opcao != 0);
